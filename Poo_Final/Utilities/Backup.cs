@@ -44,6 +44,7 @@ namespace Poo_Final.Utilities
                         if (e.Login.Equals(item.Login))
                         {
                             e.Items = item.Items;
+                            e.Hashtag = item.Hashtag;
                             setBackup(result);
                             return;
                         }

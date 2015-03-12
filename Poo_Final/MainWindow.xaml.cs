@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
+using Poo_Final.ViewModel;
 
 namespace Poo_Final
 {
@@ -21,14 +22,27 @@ namespace Poo_Final
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
+        MainViewModel viewModel;
         public MainWindow()
         {
             InitializeComponent();
+            viewModel = new MainViewModel(this);
+            this.DataContext = viewModel;
         }
 
         private void EntrarClick(object sender, RoutedEventArgs e)
         {
+            viewModel.ExecuteLogin();
+        }
 
+        private void EditarTag(object sender, RoutedEventArgs e)
+        {
+            viewModel.EditTag();
+        }
+
+        private void RealizeBackup(object sender, RoutedEventArgs e)
+        {
+            viewModel.ExecuteBackup();
         }
     }
 }
